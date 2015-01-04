@@ -18,9 +18,11 @@
     //友達の名前の配列
     NSMutableArray *friends;
     
-    
 
-    
+    //画面サイズの取得
+    UIScreen *sc;
+    //ステータスバーを除いたサイズ
+    CGRect rect;
 }
 
 

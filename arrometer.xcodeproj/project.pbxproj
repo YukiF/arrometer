@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9880EA951A589CF1004A03EE /* AxisStd-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA8E1A589CF1004A03EE /* AxisStd-Regular.otf */; };
+		9880EA961A589CF1004A03EE /* AxisStd-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA8F1A589CF1004A03EE /* AxisStd-UltraLight.otf */; };
+		9880EA971A589CF1004A03EE /* AxisStd-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA901A589CF1004A03EE /* AxisStd-ExtraLight.otf */; };
+		9880EA981A589CF1004A03EE /* AxisStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA911A589CF1004A03EE /* AxisStd-Heavy.otf */; };
+		9880EA991A589CF1004A03EE /* AxisStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA921A589CF1004A03EE /* AxisStd-Bold.otf */; };
+		9880EA9A1A589CF1004A03EE /* AxisStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA931A589CF1004A03EE /* AxisStd-Medium.otf */; };
+		9880EA9B1A589CF1004A03EE /* AxisStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9880EA941A589CF1004A03EE /* AxisStd-Light.otf */; };
+		98F198031A58B70A00869846 /* userBack1.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F197FC1A58B70A00869846 /* userBack1.png */; };
+		98F198041A58B70A00869846 /* userBack2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F197FD1A58B70A00869846 /* userBack2.png */; };
+		98F198051A58B70A00869846 /* userBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F197FE1A58B70A00869846 /* userBack3.png */; };
+		98F198061A58B70A00869846 /* userBack4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F197FF1A58B70A00869846 /* userBack4.png */; };
+		98F198071A58B70A00869846 /* userBack5.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F198001A58B70A00869846 /* userBack5.png */; };
+		98F198081A58B70A00869846 /* userBack6.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F198011A58B70A00869846 /* userBack6.png */; };
+		98F198091A58B70A00869846 /* userBack7.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F198021A58B70A00869846 /* userBack7.png */; };
 		98FEF42D1A5867DD00B2AE63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FEF42C1A5867DD00B2AE63 /* main.m */; };
 		98FEF4301A5867DD00B2AE63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FEF42F1A5867DD00B2AE63 /* AppDelegate.m */; };
 		98FEF4331A5867DD00B2AE63 /* arrometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98FEF4311A5867DD00B2AE63 /* arrometer.xcdatamodeld */; };
@@ -15,13 +29,6 @@
 		98FEF43B1A5867DD00B2AE63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF43A1A5867DD00B2AE63 /* Images.xcassets */; };
 		98FEF43E1A5867DD00B2AE63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF43C1A5867DD00B2AE63 /* LaunchScreen.xib */; };
 		98FEF44A1A5867DD00B2AE63 /* arrometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FEF4491A5867DD00B2AE63 /* arrometerTests.m */; };
-		98FEF4701A588B1D00B2AE63 /* AxisStd-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4621A588A4B00B2AE63 /* AxisStd-Regular.otf */; };
-		98FEF4711A588B1D00B2AE63 /* AxisStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4631A588A4B00B2AE63 /* AxisStd-Bold.otf */; };
-		98FEF4721A588B1D00B2AE63 /* AxisStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4641A588A4B00B2AE63 /* AxisStd-Heavy.otf */; };
-		98FEF4731A588B1D00B2AE63 /* AxisStd-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4651A588A4B00B2AE63 /* AxisStd-UltraLight.otf */; };
-		98FEF4741A588B1D00B2AE63 /* AxisStd-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4661A588A4B00B2AE63 /* AxisStd-ExtraLight.otf */; };
-		98FEF4751A588B1D00B2AE63 /* AxisStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4671A588A4B00B2AE63 /* AxisStd-Medium.otf */; };
-		98FEF4761A588B1D00B2AE63 /* AxisStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98FEF4681A588A4B00B2AE63 /* AxisStd-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9880EA8E1A589CF1004A03EE /* AxisStd-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Regular.otf"; sourceTree = "<group>"; };
+		9880EA8F1A589CF1004A03EE /* AxisStd-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-UltraLight.otf"; sourceTree = "<group>"; };
+		9880EA901A589CF1004A03EE /* AxisStd-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-ExtraLight.otf"; sourceTree = "<group>"; };
+		9880EA911A589CF1004A03EE /* AxisStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Heavy.otf"; sourceTree = "<group>"; };
+		9880EA921A589CF1004A03EE /* AxisStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Bold.otf"; sourceTree = "<group>"; };
+		9880EA931A589CF1004A03EE /* AxisStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Medium.otf"; sourceTree = "<group>"; };
+		9880EA941A589CF1004A03EE /* AxisStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Light.otf"; sourceTree = "<group>"; };
+		98F197FC1A58B70A00869846 /* userBack1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack1.png; sourceTree = "<group>"; };
+		98F197FD1A58B70A00869846 /* userBack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack2.png; sourceTree = "<group>"; };
+		98F197FE1A58B70A00869846 /* userBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack3.png; sourceTree = "<group>"; };
+		98F197FF1A58B70A00869846 /* userBack4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack4.png; sourceTree = "<group>"; };
+		98F198001A58B70A00869846 /* userBack5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack5.png; sourceTree = "<group>"; };
+		98F198011A58B70A00869846 /* userBack6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack6.png; sourceTree = "<group>"; };
+		98F198021A58B70A00869846 /* userBack7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack7.png; sourceTree = "<group>"; };
 		98FEF4271A5867DD00B2AE63 /* arrometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arrometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FEF42B1A5867DD00B2AE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98FEF42C1A5867DD00B2AE63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,13 +70,6 @@
 		98FEF4431A5867DD00B2AE63 /* arrometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arrometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FEF4481A5867DD00B2AE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98FEF4491A5867DD00B2AE63 /* arrometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arrometerTests.m; sourceTree = "<group>"; };
-		98FEF4621A588A4B00B2AE63 /* AxisStd-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Regular.otf"; sourceTree = "<group>"; };
-		98FEF4631A588A4B00B2AE63 /* AxisStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Bold.otf"; sourceTree = "<group>"; };
-		98FEF4641A588A4B00B2AE63 /* AxisStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Heavy.otf"; sourceTree = "<group>"; };
-		98FEF4651A588A4B00B2AE63 /* AxisStd-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-UltraLight.otf"; sourceTree = "<group>"; };
-		98FEF4661A588A4B00B2AE63 /* AxisStd-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-ExtraLight.otf"; sourceTree = "<group>"; };
-		98FEF4671A588A4B00B2AE63 /* AxisStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Medium.otf"; sourceTree = "<group>"; };
-		98FEF4681A588A4B00B2AE63 /* AxisStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98F197FB1A58B6EE00869846 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				98F197FC1A58B70A00869846 /* userBack1.png */,
+				98F197FD1A58B70A00869846 /* userBack2.png */,
+				98F197FE1A58B70A00869846 /* userBack3.png */,
+				98F197FF1A58B70A00869846 /* userBack4.png */,
+				98F198001A58B70A00869846 /* userBack5.png */,
+				98F198011A58B70A00869846 /* userBack6.png */,
+				98F198021A58B70A00869846 /* userBack7.png */,
+			);
+			name = design;
+			sourceTree = "<group>";
+		};
 		98FEF41E1A5867DD00B2AE63 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +125,7 @@
 		98FEF4291A5867DD00B2AE63 /* arrometer */ = {
 			isa = PBXGroup;
 			children = (
+				98F197FB1A58B6EE00869846 /* design */,
 				98FEF4611A58886800B2AE63 /* font */,
 				98FEF42E1A5867DD00B2AE63 /* AppDelegate.h */,
 				98FEF42F1A5867DD00B2AE63 /* AppDelegate.m */,
@@ -140,13 +169,13 @@
 		98FEF4611A58886800B2AE63 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				98FEF4621A588A4B00B2AE63 /* AxisStd-Regular.otf */,
-				98FEF4631A588A4B00B2AE63 /* AxisStd-Bold.otf */,
-				98FEF4641A588A4B00B2AE63 /* AxisStd-Heavy.otf */,
-				98FEF4651A588A4B00B2AE63 /* AxisStd-UltraLight.otf */,
-				98FEF4661A588A4B00B2AE63 /* AxisStd-ExtraLight.otf */,
-				98FEF4671A588A4B00B2AE63 /* AxisStd-Medium.otf */,
-				98FEF4681A588A4B00B2AE63 /* AxisStd-Light.otf */,
+				9880EA8E1A589CF1004A03EE /* AxisStd-Regular.otf */,
+				9880EA8F1A589CF1004A03EE /* AxisStd-UltraLight.otf */,
+				9880EA901A589CF1004A03EE /* AxisStd-ExtraLight.otf */,
+				9880EA911A589CF1004A03EE /* AxisStd-Heavy.otf */,
+				9880EA921A589CF1004A03EE /* AxisStd-Bold.otf */,
+				9880EA931A589CF1004A03EE /* AxisStd-Medium.otf */,
+				9880EA941A589CF1004A03EE /* AxisStd-Light.otf */,
 			);
 			name = font;
 			sourceTree = "<group>";
@@ -231,16 +260,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98FEF4701A588B1D00B2AE63 /* AxisStd-Regular.otf in Resources */,
-				98FEF4711A588B1D00B2AE63 /* AxisStd-Bold.otf in Resources */,
-				98FEF4721A588B1D00B2AE63 /* AxisStd-Heavy.otf in Resources */,
-				98FEF4731A588B1D00B2AE63 /* AxisStd-UltraLight.otf in Resources */,
-				98FEF4741A588B1D00B2AE63 /* AxisStd-ExtraLight.otf in Resources */,
-				98FEF4751A588B1D00B2AE63 /* AxisStd-Medium.otf in Resources */,
-				98FEF4761A588B1D00B2AE63 /* AxisStd-Light.otf in Resources */,
+				9880EA981A589CF1004A03EE /* AxisStd-Heavy.otf in Resources */,
+				9880EA971A589CF1004A03EE /* AxisStd-ExtraLight.otf in Resources */,
+				98F198091A58B70A00869846 /* userBack7.png in Resources */,
+				98F198041A58B70A00869846 /* userBack2.png in Resources */,
 				98FEF4391A5867DD00B2AE63 /* Main.storyboard in Resources */,
+				9880EA951A589CF1004A03EE /* AxisStd-Regular.otf in Resources */,
+				98F198071A58B70A00869846 /* userBack5.png in Resources */,
+				98F198081A58B70A00869846 /* userBack6.png in Resources */,
 				98FEF43E1A5867DD00B2AE63 /* LaunchScreen.xib in Resources */,
+				9880EA9B1A589CF1004A03EE /* AxisStd-Light.otf in Resources */,
+				9880EA991A589CF1004A03EE /* AxisStd-Bold.otf in Resources */,
+				98F198061A58B70A00869846 /* userBack4.png in Resources */,
 				98FEF43B1A5867DD00B2AE63 /* Images.xcassets in Resources */,
+				98F198051A58B70A00869846 /* userBack3.png in Resources */,
+				98F198031A58B70A00869846 /* userBack1.png in Resources */,
+				9880EA961A589CF1004A03EE /* AxisStd-UltraLight.otf in Resources */,
+				9880EA9A1A589CF1004A03EE /* AxisStd-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +488,7 @@
 				98FEF44F1A5867DD00B2AE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98FEF4501A5867DD00B2AE63 /* Build configuration list for PBXNativeTarget "arrometerTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +497,7 @@
 				98FEF4521A5867DD00B2AE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
