@@ -23,6 +23,9 @@
     UIScreen *sc;
     //ステータスバーを除いたサイズ
     CGRect rect;
+    
+    //タップした時のフィルター
+    UIView * filterView;
 }
 
 
