@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "ViewController.h"
 
+PFUser *user;
 
 
 @interface SignUpViewController : UIViewController<UITextFieldDelegate>{
