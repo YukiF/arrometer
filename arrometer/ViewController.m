@@ -80,7 +80,7 @@
     meterLabel.textAlignment = NSTextAlignmentCenter;
     [filterView addSubview:meterLabel];
     
-    filterView.hidden = YES;
+    filterView.alpha = 0.0;
 
 }
 
@@ -173,15 +173,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"Yuki"] = @"Futagami";
+//    [testObject saveInBackground];
+    
     // cellがタップされた際の処理
-    filterView.hidden = NO;
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         // アニメーションをする処理
+                         filterView.alpha = 1.0;
+                     }];
+   
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // タッチされたときの処理
-    if (filterView.hidden == NO) {
-        filterView.hidden = YES;
+    if (filterView.alpha == 1.0) {
+        [UIView animateWithDuration:0.5f
+                         animations:^{
+                             // アニメーションをする処理
+                             filterView.alpha = 0.0;
+                         }];
     }
 }
 
