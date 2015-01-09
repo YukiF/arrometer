@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KTw-6e-ZKI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ucm-HC-v8P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -22,6 +22,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAp-ST-mcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="-235"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="GN2-rO-bMh">
+            <objects>
+                <viewController storyboardIdentifier="LVC" id="TCk-6s-Ha5" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KXo-Ic-gvH"/>
+                        <viewControllerLayoutGuide type="bottom" id="yPi-0F-Zrj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Uf-yc-j3k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J43-bj-ezX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="-414"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -63,7 +82,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="CP5-nA-p31">
             <objects>
-                <viewController id="KTw-6e-ZKI" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SUVC" id="KTw-6e-ZKI" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U1P-qj-id5"/>
                         <viewControllerLayoutGuide type="bottom" id="3wc-fw-SCQ"/>

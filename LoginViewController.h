@@ -1,5 +1,5 @@
 //
-//  firstViewController.h
+//  LoginViewController.h
 //  arrometer
 //
 //  Created by Yuki.F on 2015/01/08.
@@ -7,19 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SignUpViewController.h"
+#import "ViewController.h"
 
-@interface firstViewController : UIViewController{
+
+@interface LoginViewController : UIViewController<UITextFieldDelegate>{
     
-    UIButton *signUp;
+    
+    UITextField *userName;
+    UITextField *pass;
     UIButton *login;
+    UIButton *back;
     
     //画面サイズの取得
     UIScreen *sc;
     
     //ステータスバーを除いたサイズ
     CGRect rect;
-    
 }
+
 
 @end

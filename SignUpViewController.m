@@ -66,6 +66,19 @@
     signUp.titleLabel.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
     [signUp setTitleColor:[ UIColor whiteColor ] forState:UIControlStateNormal ];
     [self.view addSubview:signUp];
+    
+    UIImage *img2 = [UIImage imageNamed:@"whiteEdge.png"];  // ボタンにする画像を生成する
+    back =  [UIButton buttonWithType:UIButtonTypeCustom];
+    back.frame = CGRectMake(0,rect.size.height/6.4*3,rect.size.width,rect.size.height/6.4);
+    [back setBackgroundImage:img2 forState:UIControlStateNormal];  // 画像をセットする
+    // ボタンが押された時にsendメソッドを呼び出す
+    [back addTarget:self
+               action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [back setTitle:@"Back" forState:UIControlStateNormal ];
+    back.titleLabel.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+    [back setTitleColor:[ UIColor whiteColor ] forState:UIControlStateNormal ];
+    [self.view addSubview:back];
+
 
 
 }
@@ -185,5 +198,14 @@
         }];
     }
 }
+
+
+-(void)back:(UIButton*)button{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 
 @end
