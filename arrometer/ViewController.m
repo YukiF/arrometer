@@ -17,6 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //ステータスバーが見えていたら消す
+    //http://www.dprog.info/ios/xcode5_status_bar_appearance/
+    if( [ UIApplication sharedApplication ].isStatusBarHidden == NO ) {
+        [ UIApplication sharedApplication ].statusBarHidden = YES;
+    }
+    
+    //画面サイズの取得
+    sc = [UIScreen mainScreen];
+    //ステータスバーを除いたサイズ
+    rect = sc.applicationFrame;
+    
+//    table = [[UITableView alloc]initWithFrame:CGRectMake(0,0, rect.size.width,rect.size.height) style:UITableViewStylePlain];
+//    table.rowHeight = rect.size.height/6.4;
+//    [self.view addSubview:table];
+
+    
+
+    
     table.delegate = self;
     table.dataSource = self;
     
@@ -43,10 +62,7 @@
     NSString *ex10 = @"JULIANA";
     [friends addObject:ex10];
     
-    //画面サイズの取得
-    sc = [UIScreen mainScreen];
-    //ステータスバーを除いたサイズ
-    rect = sc.applicationFrame;
+    
     //境界線を消す
     table.separatorColor = [UIColor clearColor];
         
@@ -99,6 +115,7 @@
     return [friends count];
 }
 
+
 //セルの作り方の設定と、セルの内容を決めるメソッド
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -110,12 +127,14 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    table.rowHeight = rect.size.height/6.4;
+    
     /* -- cellに直接ラベルを載せれないので、UIViewを1クッション置く。 -- */
     //UIViewクラスのmyViewを生成
     UIView * myView = [[UIView alloc] init];
     
     //myViewの位置と大きさの指定
-    myView.frame = CGRectMake(0, 0, rect.size.width, 110);
+    myView.frame = CGRectMake(0, 0, rect.size.width, rect.size.height/6.4);
     myView.backgroundColor = [UIColor colorWithRed:0.08235 green:0.57647 blue:0.78039 alpha:1.0];
     //myViewをcellに表示
     [cell.contentView addSubview:myView];
@@ -124,45 +143,45 @@
     if (indexPath.row == 0) {
         UIImage *userBack = [UIImage imageNamed:@"userBack1.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else if(indexPath.row == 1){
         UIImage *userBack = [UIImage imageNamed:@"userBack2.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else if(indexPath.row == 2){
         UIImage *userBack = [UIImage imageNamed:@"userBack3.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else if(indexPath.row == 3){
         UIImage *userBack = [UIImage imageNamed:@"userBack4.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else if(indexPath.row == 4){
         UIImage *userBack = [UIImage imageNamed:@"userBack5.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else if(indexPath.row == 5){
         UIImage *userBack = [UIImage imageNamed:@"userBack6.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }else{
         UIImage *userBack = [UIImage imageNamed:@"userBack7.png"];
         UIImageView *userBackPic = [[UIImageView alloc]initWithImage:userBack];
-        userBackPic.frame = CGRectMake(0,0,rect.size.width,110);
+        userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }
     //ラベル
     UILabel *friendLabel = [[UILabel alloc] init];
     friendLabel.frame = CGRectMake(160,8,rect.size.width,rect.size.width/4);
-    friendLabel.center = CGPointMake(rect.size.width/2,55);
+    friendLabel.center = CGPointMake(rect.size.width/2,rect.size.height/12.8);
     friendLabel.text = [friends objectAtIndex:indexPath.row];
-    friendLabel.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:45.f];
+    friendLabel.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
     friendLabel.textColor = [UIColor whiteColor];
     friendLabel.textAlignment = NSTextAlignmentCenter;
     [myView addSubview:friendLabel];

@@ -17,12 +17,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if( [ UIApplication sharedApplication ].isStatusBarHidden == NO ) {
+        [ UIApplication sharedApplication ].statusBarHidden = YES;
+    }
+
+    
+    //画面サイズの取得
+    sc = [UIScreen mainScreen];
+    //ステータスバーを除いたサイズ
+    rect = sc.applicationFrame;
+    
+    //背景画像
+    UIImage *haikei = [UIImage imageNamed:@"signUpLogin.png"];
+    UIImageView *haikeiPic = [[UIImageView alloc]initWithImage:haikei];
+    haikeiPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height);
+    [self.view addSubview:haikeiPic];
+    
+    userName = [[UITextField alloc] initWithFrame:CGRectMake(0,0,rect.size.width,rect.size.height/6.4)];
+    pass = [[UITextField alloc] initWithFrame:CGRectMake(0,rect.size.height/6.4,rect.size.width,rect.size.height/6.4)];
+
+    userName.background = [UIImage imageNamed:@"whiteEdge.png"];
+    pass.background = [UIImage imageNamed:@"whiteEdge.png"];
+
     userName.delegate = self;
     pass.delegate = self;
     userName.textAlignment = NSTextAlignmentCenter;
     pass.textAlignment = NSTextAlignmentCenter;
-    userName.placeholder = @"USER";
-    pass.placeholder = @"PASSWORD";
+    userName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"User Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor] ,}];
+    pass.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor] ,}];
+
+    userName.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+    pass.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+    userName.textColor = [UIColor whiteColor];
+    pass.textColor = [UIColor whiteColor];
+
+    [self.view addSubview:userName];
+    [self.view addSubview:pass];
+    
+    UIImage *img = [UIImage imageNamed:@"whiteEdge.png"];  // ボタンにする画像を生成する
+    signUp =  [UIButton buttonWithType:UIButtonTypeCustom];
+    signUp.frame = CGRectMake(0,rect.size.height/3.2,rect.size.width,rect.size.height/6.4);
+    [signUp setBackgroundImage:img forState:UIControlStateNormal];  // 画像をセットする
+    // ボタンが押された時にsendメソッドを呼び出す
+    [signUp addTarget:self
+            action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
+    [signUp setTitle:@"Sign Up" forState:UIControlStateNormal ];
+    signUp.titleLabel.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+    [signUp setTitleColor:[ UIColor whiteColor ] forState:UIControlStateNormal ];
+    [self.view addSubview:signUp];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,7 +154,7 @@
 //}
 
 
--(IBAction)send{
+-(void)send:(UIButton*)button{
     NSLog(@"%@",userName.text);
     NSLog(@"%@",pass.text);
 

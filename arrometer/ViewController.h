@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
+
+
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>{
     
     IBOutlet UITableView *table;
@@ -22,9 +24,10 @@
 
     //画面サイズの取得
     UIScreen *sc;
+    
     //ステータスバーを除いたサイズ
     CGRect rect;
-    
+   
     //タップした時のフィルター
     UIView * filterView;
 }

@@ -16,10 +16,17 @@ PFUser *user;
 @interface SignUpViewController : UIViewController<UITextFieldDelegate>{
     
     
-    IBOutlet UITextField *userName;
-    IBOutlet UITextField *pass;
+    UITextField *userName;
+    UITextField *pass;
+    UIButton *signUp;
+    UIButton *back;
+    
+    //画面サイズの取得
+    UIScreen *sc;
+    
+    //ステータスバーを除いたサイズ
+    CGRect rect;
 }
 
--(IBAction)send;
 
 @end
