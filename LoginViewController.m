@@ -61,7 +61,7 @@
     [login setBackgroundImage:img forState:UIControlStateNormal];  // 画像をセットする
     // ボタンが押された時にsendメソッドを呼び出す
     [login addTarget:self
-               action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
+               action:@selector(toLogin:) forControlEvents:UIControlEventTouchUpInside];
     [login setTitle:@"Log In" forState:UIControlStateNormal ];
     login.titleLabel.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
     [login setTitleColor:[ UIColor whiteColor ] forState:UIControlStateNormal ];
@@ -96,9 +96,24 @@
 }
 */
 
--(void)send:(UIButton*)button{
+-(void)toLogin:(UIButton*)button{
     NSLog(@"%@",userName.text);
     NSLog(@"%@",pass.text);
+    
+    [PFUser logInWithUsernameInBackground:userName.text password:pass.text block:^(PFUser *user, NSError *error) {
+        // ログインに成功すると該当ユーザーのオブジェクトを取得することが出来る
+        if (user) {
+            // ログインに成功した場合
+            //success
+            ViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VC"];
+            [self presentViewController:ViewController animated:YES completion:nil];
+        } else {
+            // ログインに失敗した場合
+            UIAlertView *Alert2 = [[UIAlertView alloc]initWithTitle:@"ログインできません。" message:@"ユーザー名、又はパスワードが間違っています。" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [Alert2 show];
+
+        }
+    }];
     
 //    if ([userName.text length] == 0 || [pass.text length] == 0) {
 //        
