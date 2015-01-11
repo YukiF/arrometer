@@ -19,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
@@ -31,6 +32,20 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     // Override point for customization after application launch.
    
+    if ([PFUser currentUser]) {
+        // ログイン済み
+        UIStoryboard *storyboard1 = [[[self window] rootViewController] storyboard];
+        UIViewController *ViewController = [storyboard1 instantiateViewControllerWithIdentifier:@"VC"];
+        self.window.rootViewController = ViewController;
+        [self.window makeKeyAndVisible];
+    } else {
+        // 未ログイン
+        UIStoryboard *storyboard2 = [[[self window] rootViewController] storyboard];
+        UIViewController *firstViewController = [storyboard2 instantiateViewControllerWithIdentifier:@"FVC"];
+        self.window.rootViewController = firstViewController;
+        [self.window makeKeyAndVisible];
+    }
+
     
     return YES;
 }

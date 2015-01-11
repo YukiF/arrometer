@@ -62,7 +62,7 @@
     [self.view addSubview:login];
     
     UILabel *label1 = [[UILabel alloc]init];
-    label1.frame = CGRectMake(10, 10, rect.size.width, 50);
+    label1.frame = CGRectMake(10, 10, rect.size.width, 100);
     label1.center = CGPointMake(rect.size.width/2, rect.size.height/12.8);
     label1.text = @"Welcome";
     label1.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/10];
@@ -71,7 +71,7 @@
     [self.view addSubview:label1];
     
     UILabel *label2 = [[UILabel alloc]init];
-    label2.frame = CGRectMake(10, 10, rect.size.width, 50);
+    label2.frame = CGRectMake(10, 10, rect.size.width, 100);
     label2.center = CGPointMake(rect.size.width/2, rect.size.height/12.8+rect.size.height/6.4);
     label2.text = @"To";
     label2.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/10];
@@ -80,7 +80,7 @@
     [self.view addSubview:label2];
     
     UILabel *label3 = [[UILabel alloc]init];
-    label3.frame = CGRectMake(10, 10, rect.size.width, 50);
+    label3.frame = CGRectMake(10, 10, rect.size.width, 100);
     label3.center = CGPointMake(rect.size.width/2, rect.size.height/12.8+rect.size.height/3.2);
     label3.text = @"\"Arrometer\"";
     label3.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/10];
