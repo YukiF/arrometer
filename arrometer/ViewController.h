@@ -30,6 +30,8 @@
    
     //タップした時のフィルター
     UIView * filterView;
+    
+    UIButton *fukidasi;
 }
 
 

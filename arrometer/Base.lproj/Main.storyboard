@@ -7,7 +7,7 @@
         <!--First View Controller-->
         <scene sceneID="pxB-dA-mhz">
             <objects>
-                <viewController id="Ucm-HC-v8P" customClass="firstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FVC" id="Ucm-HC-v8P" customClass="firstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CRP-dr-b6f"/>
                         <viewControllerLayoutGuide type="bottom" id="khg-9Q-cZj"/>
@@ -97,6 +97,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tym-32-ZuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011" y="378"/>
+        </scene>
+        <!--Option View Controller-->
+        <scene sceneID="VU0-re-4GZ">
+            <objects>
+                <viewController storyboardIdentifier="OVC" id="Ndx-45-Al7" customClass="OptionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Dx-CP-hGG"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ug-b2-qrh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B8d-c3-La2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fad-f1-J3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480" y="523"/>
         </scene>
     </scenes>
 </document>

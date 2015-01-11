@@ -61,6 +61,15 @@
     [friends addObject:ex9];
     NSString *ex10 = @"JULIANA";
     [friends addObject:ex10];
+    NSString *ex11 = @"POPO";
+    [friends addObject:ex11];
+    NSString *ex12 = @"AMAAA";
+    [friends addObject:ex12];
+    NSString *ex13 = @"KAKAKAKA";
+    [friends addObject:ex13];
+    NSString *ex14 = @"KAKOKKIJHYTUJIK";
+    [friends addObject:ex14];
+
     
     
     //境界線を消す
@@ -97,6 +106,17 @@
     [filterView addSubview:meterLabel];
     
     filterView.alpha = 0.0;
+    
+    //吹き出しのボタン
+    UIImage *imgFukidasi = [UIImage imageNamed:@"fukidasi.png"];  // ボタンにする画像を生成する
+    fukidasi =  [UIButton buttonWithType:UIButtonTypeCustom];
+    fukidasi.frame = CGRectMake(rect.size.width/4*3,rect.size.height-rect.size.width/4*1,rect.size.width/5,rect.size.width/5);
+    [fukidasi setBackgroundImage:imgFukidasi forState:UIControlStateNormal];  // 画像をセットする
+    // ボタンが押された時にtoFukidasiメソッドを呼び出す
+    [fukidasi addTarget:self
+              action:@selector(toOption:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:fukidasi];
+
 
 }
 
@@ -216,5 +236,12 @@
                          }];
     }
 }
+
+-(void)toOption:(UIButton*)button{
+    
+    ViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"OVC"];
+    [self presentViewController:ViewController animated:YES completion:nil];
+}
+
 
 @end
