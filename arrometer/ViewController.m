@@ -29,12 +29,6 @@
     //ステータスバーを除いたサイズ
     rect = sc.applicationFrame;
     
-//    table = [[UITableView alloc]initWithFrame:CGRectMake(0,0, rect.size.width,rect.size.height) style:UITableViewStylePlain];
-//    table.rowHeight = rect.size.height/6.4;
-//    [self.view addSubview:table];
-
-    
-
     
     table.delegate = self;
     table.dataSource = self;
@@ -69,8 +63,6 @@
     [friends addObject:ex13];
     NSString *ex14 = @"KAKOKKIJHYTUJIK";
     [friends addObject:ex14];
-
-    
     
     //境界線を消す
     table.separatorColor = [UIColor clearColor];
@@ -118,6 +110,14 @@
     [filterView addSubview:meterLabel];
     
     filterView.alpha = 0.0;
+    
+    cellNum = (int)[friends count] + 1;
+    
+    
+    // キーボードが表示されたときのNotificationをうけとります。（後で）
+    [self registerForKeyboardNotifications];
+
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,13 +126,14 @@
 }
 
 
+
 #pragma mark -- テーブルビューに必要なメソッド
 //セルにIDをつけるのは、どのセルを再利用して再度表示したいのかを教えるため
 
 //セルの数を決めるメソッド
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [friends count];
+    return cellNum;
 }
 
 
@@ -196,16 +197,32 @@
         userBackPic.frame = CGRectMake(0,0,rect.size.width,rect.size.height/6.4);
         [myView addSubview:userBackPic];
     }
-    //ラベル
-    UILabel *friendLabel = [[UILabel alloc] init];
-    friendLabel.frame = CGRectMake(160,8,rect.size.width,rect.size.width/4);
-    friendLabel.center = CGPointMake(rect.size.width/2,rect.size.height/12.8);
-    friendLabel.text = [friends objectAtIndex:indexPath.row];
-    friendLabel.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
-    friendLabel.textColor = [UIColor whiteColor];
-    friendLabel.textAlignment = NSTextAlignmentCenter;
-    [myView addSubview:friendLabel];
     
+    if (indexPath.row + 1 < cellNum) {
+        //ラベル
+        UILabel *friendLabel = [[UILabel alloc] init];
+        friendLabel.frame = CGRectMake(160,8,rect.size.width,rect.size.width/4);
+        friendLabel.center = CGPointMake(rect.size.width/2,rect.size.height/12.8);
+        friendLabel.text = [friends objectAtIndex:indexPath.row];
+        friendLabel.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+        friendLabel.textColor = [UIColor whiteColor];
+        friendLabel.textAlignment = NSTextAlignmentCenter;
+        [myView addSubview:friendLabel];
+        
+    }else{
+        
+        addUser = [[UITextField alloc] initWithFrame:CGRectMake(0,0,rect.size.width,rect.size.height/6.4)];
+        addUser.textAlignment = NSTextAlignmentCenter;
+        addUser.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"+" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor] ,}];
+        addUser.font = [ UIFont fontWithName:@"AvenirNext-UltraLight" size:rect.size.height/16];
+        addUser.textColor = [UIColor whiteColor];
+        addUser.delegate = self;
+
+
+        [myView addSubview:addUser];
+
+
+    }
     
     return cell;
 }
@@ -217,12 +234,14 @@
 //    [testObject saveInBackground];
     
     // cellがタップされた際の処理
-    [UIView animateWithDuration:0.5f
-                     animations:^{
-                         // アニメーションをする処理
-                         filterView.alpha = 1.0;
-                     }];
-   
+    if (indexPath.row + 1 < cellNum) {
+        [UIView animateWithDuration:0.5f
+                         animations:^{
+                             // アニメーションをする処理
+                             filterView.alpha = 1.0;
+                         }
+         ];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -242,6 +261,39 @@
     ViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"OVC"];
     [self presentViewController:ViewController animated:YES completion:nil];
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField{
+    
+    [addUser resignFirstResponder];
+    return YES;
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    // キーボードの表示開始時の場所と大きさを取得します。
+    CGRect keyboardFrameBegin = [[aNotification.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+
+    CGPoint scrollPoint = CGPointMake(0.0,rect.size.height/6.4 * (cellNum - 7) + rect.size.height/11.8 + keyboardFrameBegin.size.height);
+    [table setContentOffset:scrollPoint animated:YES];
+
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    CGPoint scrollReturnPoint = CGPointMake(0.0,rect.size.height/6.4 * (cellNum - 7) + rect.size.height/11.8);
+    [table setContentOffset:scrollReturnPoint animated:YES];
+}
+
+
 
 
 @end

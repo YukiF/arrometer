@@ -11,12 +11,12 @@
 
 
 
-@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>{
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate>{
     
     IBOutlet UITableView *table;
     
-    //登録している友達の数
-    int friendNum;
+    //セルの数
+    int cellNum;
     
     //友達の名前の配列
     NSMutableArray *friends;
@@ -32,6 +32,11 @@
     UIView * filterView;
     
     UIButton *fukidasi;
+    
+    //ユーザー追加するためのテキストフィールド
+    UITextField *addUser;
+    
+
 }
 
 

@@ -96,6 +96,14 @@
 }
 */
 
+-(BOOL)textFieldShouldReturn:(UITextField*)textField{
+    [userName resignFirstResponder];
+    [pass resignFirstResponder];
+    
+    return YES;
+}
+
+
 -(void)toLogin:(UIButton*)button{
     NSLog(@"%@",userName.text);
     NSLog(@"%@",pass.text);

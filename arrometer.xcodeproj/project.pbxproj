@@ -29,11 +29,11 @@
 		98625C481A5F76A60021B929 /* userBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C411A5F76A60021B929 /* userBack3.png */; };
 		98625C491A5F76A60021B929 /* userBack4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C421A5F76A60021B929 /* userBack4.png */; };
 		98625C4A1A5F76A60021B929 /* userBack5.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C431A5F76A60021B929 /* userBack5.png */; };
-		98625C4B1A5F76A60021B929 /* userBack6.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C441A5F76A60021B929 /* userBack6.png */; };
 		98625C4C1A5F76A60021B929 /* userBack7.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C451A5F76A60021B929 /* userBack7.png */; };
 		98625C4E1A5F78790021B929 /* whiteEdge.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C4D1A5F78790021B929 /* whiteEdge.png */; };
 		98625C501A5F79540021B929 /* whiteWaku.png in Resources */ = {isa = PBXBuildFile; fileRef = 98625C4F1A5F79540021B929 /* whiteWaku.png */; };
 		98625C531A5FA84A0021B929 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98625C521A5FA84A0021B929 /* LoginViewController.m */; };
+		989C48741A632BA900035BD6 /* userBack6.png in Resources */ = {isa = PBXBuildFile; fileRef = 989C48731A632BA900035BD6 /* userBack6.png */; };
 		98E48AD01A6227310021B014 /* fukidasi.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E48ACF1A6227310021B014 /* fukidasi.png */; };
 		98E48AD31A622ED00021B014 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E48AD21A622ED00021B014 /* OptionViewController.m */; };
 		98F1980C1A58BF7100869846 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F1980A1A58BF7100869846 /* arrow.png */; };
@@ -83,12 +83,12 @@
 		98625C411A5F76A60021B929 /* userBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack3.png; sourceTree = "<group>"; };
 		98625C421A5F76A60021B929 /* userBack4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack4.png; sourceTree = "<group>"; };
 		98625C431A5F76A60021B929 /* userBack5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack5.png; sourceTree = "<group>"; };
-		98625C441A5F76A60021B929 /* userBack6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack6.png; sourceTree = "<group>"; };
 		98625C451A5F76A60021B929 /* userBack7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack7.png; sourceTree = "<group>"; };
 		98625C4D1A5F78790021B929 /* whiteEdge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteEdge.png; sourceTree = "<group>"; };
 		98625C4F1A5F79540021B929 /* whiteWaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteWaku.png; sourceTree = "<group>"; };
 		98625C511A5FA84A0021B929 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		98625C521A5FA84A0021B929 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		989C48731A632BA900035BD6 /* userBack6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userBack6.png; sourceTree = "<group>"; };
 		98E48ACF1A6227310021B014 /* fukidasi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fukidasi.png; sourceTree = "<group>"; };
 		98E48AD11A622ED00021B014 /* OptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionViewController.h; path = ../OptionViewController.h; sourceTree = "<group>"; };
 		98E48AD21A622ED00021B014 /* OptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionViewController.m; path = ../OptionViewController.m; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				98625C411A5F76A60021B929 /* userBack3.png */,
 				98625C421A5F76A60021B929 /* userBack4.png */,
 				98625C431A5F76A60021B929 /* userBack5.png */,
-				98625C441A5F76A60021B929 /* userBack6.png */,
+				989C48731A632BA900035BD6 /* userBack6.png */,
 				98625C451A5F76A60021B929 /* userBack7.png */,
 				98F1980A1A58BF7100869846 /* arrow.png */,
 				98F1980B1A58BF7100869846 /* circle.png */,
@@ -349,13 +349,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				98625C4A1A5F76A60021B929 /* userBack5.png in Resources */,
+				989C48741A632BA900035BD6 /* userBack6.png in Resources */,
 				98E48AD01A6227310021B014 /* fukidasi.png in Resources */,
 				98625C4E1A5F78790021B929 /* whiteEdge.png in Resources */,
 				98625C311A5F43CD0021B929 /* signUpLogin.png in Resources */,
 				98FEF4391A5867DD00B2AE63 /* Main.storyboard in Resources */,
 				98F1980D1A58BF7100869846 /* circle.png in Resources */,
 				98FEF43E1A5867DD00B2AE63 /* LaunchScreen.xib in Resources */,
-				98625C4B1A5F76A60021B929 /* userBack6.png in Resources */,
 				98625C3E1A5F5E1E0021B929 /* haikei.png in Resources */,
 				98625C471A5F76A60021B929 /* userBack2.png in Resources */,
 				98625C501A5F79540021B929 /* whiteWaku.png in Resources */,
