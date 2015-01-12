@@ -267,16 +267,19 @@
     
     [addUser resignFirstResponder];
 
-//    //ユーザーが存在するかどうかを確認
-//    PFQuery *query = [PFQuery queryWithClassName:@"Friends"];
-//    [query whereKey:@"username" hasPrefix:addUser.text];
-//    if (query) {
-//        NSLog(@"あるよ");
-//    }else{
-//        
-//        NSLog(@"ないねん");
-//    }
-    
+    //ユーザーが存在するかどうかを確認
+    PFQuery *pfQuery = [PFQuery queryWithClassName:@"_User"];
+    [pfQuery whereKey:@"username" equalTo:addUser.text];
+    [pfQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (object == nil){
+            NSLog(@"%@", error.description);
+            UIAlertView *Alert = [[UIAlertView alloc]initWithTitle:@"追加できません。" message:@"該当するユーザーが存在しません。" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [Alert show];
+
+        }else{
+            NSLog(@"%@", object[@"username"]);
+        }
+    }];
     return YES;
 }
 
