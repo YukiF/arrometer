@@ -280,30 +280,48 @@
     return YES;
 }
 
-//キーボードを大文字のみに
+//キーボードを大文字のみに,10文字以下に
 //http://qiita.com/nakacity_people/items/595bef9b3d8fc5801ce9
+//http://www.tamurasouko.com/?p=940
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     // 該当のtextField
     if( textField == addUser) {
-        // deleteの時
-        if( string.length == 0 ) return YES;
         
-        BOOL canEdit = YES;
-        NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-        for (int i = 0; i < string.length; i++)
-        {
-            unichar c = [string characterAtIndex:i];
-            if (![myCharSet characterIsMember:c]) {
-                canEdit = NO;
-                
-                if( 'a' <= c && c <= 'z' ) {
-                    NSString *str = [[NSString stringWithFormat:@"%c", c] uppercaseString];
-                    textField.text = [textField.text stringByReplacingCharactersInRange:NSMakeRange(range.location+i, 0) withString:str];
+        // 入力済みのテキストを取得
+        NSMutableString *str = [textField.text mutableCopy];
+        
+        // 入力済みのテキストと入力が行われたテキストを結合
+        [str replaceCharactersInRange:range withString:string];
+        
+        if ([str length] > 12) {
+            // ※ここに文字数制限を超えたことを通知する処理を追加
+            
+            return NO;
+        }else{
+            
+            // deleteの時
+            if( string.length == 0 ) return YES;
+            
+            BOOL canEdit = YES;
+            NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+            for (int i = 0; i < string.length; i++)
+            {
+                unichar c = [string characterAtIndex:i];
+                if (![myCharSet characterIsMember:c]) {
+                    canEdit = NO;
+                    
+                    if( 'a' <= c && c <= 'z' ) {
+                        NSString *str = [[NSString stringWithFormat:@"%c", c] uppercaseString];
+                        textField.text = [textField.text stringByReplacingCharactersInRange:NSMakeRange(range.location+i, 0) withString:str];
+                    }
                 }
             }
+            return canEdit;
         }
-        return canEdit;
     }else return YES;
+    
+    
+    
 }
 
 
