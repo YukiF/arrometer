@@ -122,11 +122,10 @@
     [filterView addSubview:arrowPic];
     
     //距離を示すラベル
-    UILabel *meterLabel = [[UILabel alloc] init];
+    meterLabel = [[UILabel alloc] init];
     meterLabel.frame = CGRectMake(160,8,rect.size.width,rect.size.width/4);
     meterLabel.center = CGPointMake(rect.size.width/2,rect.size.width/5*2);
-    meterLabel.text = @"3000m";
-    meterLabel.font = [UIFont fontWithName:@"AvenirNextCondensed-DemiBold" size:80.f];
+    meterLabel.font = [UIFont fontWithName:@"AvenirNextCondensed-DemiBold" size:70.f];
     meterLabel.textColor = [UIColor colorWithRed:0.11373 green:0.29412 blue:0.61961 alpha:1.0];
     meterLabel.textAlignment = NSTextAlignmentCenter;
     [filterView addSubview:meterLabel];
@@ -301,6 +300,22 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
                              filterView.alpha = 1.0;
                          }
          ];
+        
+        ttLatitude = 35.658625;
+        ttLongitude = 139.745415;
+        
+        // 経緯・緯度からCLLocationを作成
+        CLLocation *A = [[CLLocation alloc] initWithLatitude:ttLatitude longitude:ttLongitude];
+        CLLocation *B = [[CLLocation alloc] initWithLatitude:myLatitude longitude:myLongitude];
+        
+        //　距離を取得
+        CLLocationDistance distance = [A distanceFromLocation:B];
+        // 距離をコンソールに表示
+        NSLog(@"distance:%f", distance);
+        intDis = roundf(distance);
+        meterLabel.text = [NSString stringWithFormat:@"%dm",intDis];
+
+
     }
 }
 

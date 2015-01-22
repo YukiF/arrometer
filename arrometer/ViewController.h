@@ -43,6 +43,14 @@
     CLLocationManager *locationManager;
     float myLatitude;
     float myLongitude;
+    
+    //sample東京タワーの緯度経度
+    float ttLatitude;
+    float ttLongitude;
+    
+    //距離を示すラベル
+    UILabel *meterLabel;
+    int intDis;
 }
 
 
