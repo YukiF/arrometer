@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "SignUpViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 
-@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate>{
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate,CLLocationManagerDelegate>{
     
     IBOutlet UITableView *table;
     
@@ -38,6 +39,10 @@
     UITextField *addUser;
     
 
+    //GPS用
+    CLLocationManager *locationManager;
+    float myLatitude;
+    float myLongitude;
 }
 
 

@@ -33,6 +33,28 @@
     table.delegate = self;
     table.dataSource = self;
     
+    //http://zutto-megane.com/objective-c/post-384/
+    //GPSの利用可否判断
+    if ([CLLocationManager locationServicesEnabled]) {
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.distanceFilter = 1000.0;
+        [locationManager startUpdatingLocation];
+        NSLog(@"Start updating location.");
+        
+        // iOS8未満は、このメソッドは無いので
+        if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            
+            // GPSを取得する旨の認証をリクエストする
+            // 「このアプリ使っていない時も取得するけどいいでしょ？」
+            [locationManager requestAlwaysAuthorization];
+        }
+        
+    } else {
+        NSLog(@"The location services is disabled.");
+    }
+    
+    
     //友達の名前の配列
     friends = [[NSMutableArray alloc] init];
     NSString *ex1 = @"GAMI";
@@ -123,6 +145,44 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    
+    
+    CLLocation *newLocation = [locations lastObject];
+    // 位置情報を取り出す
+    //緯度
+    myLatitude = newLocation.coordinate.latitude;
+    //経度
+    myLongitude = newLocation.coordinate.longitude;
+    
+    
+    NSLog(@"%f",myLatitude);
+    NSLog(@"%f",myLongitude);
+    NSLog(@"位置情報取得中");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"エラー" message:@"位置情報が取得できませんでした。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alertView show];
+    
+}
+
+//http://blog.koogawa.com/entry/2014/08/12/191215
+// CLLocationManager オブジェクトにデリゲートオブジェクトを設定すると初回に呼ばれる
+- (void)locationManager:(CLLocationManager *)manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        // ユーザが位置情報の使用を許可していない
+        NSLog(@"ユーザーが許可してません。");
+    }
 }
 
 
