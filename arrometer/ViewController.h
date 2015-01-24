@@ -45,8 +45,8 @@
     float myLongitude;
     
     //sample東京タワーの緯度経度
-    float ttLatitude;
-    float ttLongitude;
+    float targetLatitude;
+    float targetLongitude;
     
     //距離を示すラベル
     UILabel *meterLabel;

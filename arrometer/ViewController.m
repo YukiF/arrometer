@@ -184,6 +184,42 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
     }
 }
 
+//http://web-terminal.blogspot.com/2013/01/iphonear.html
+// 北を基準として二点間の緯度・経度を元に方位角を算出する
+//------------------------------------------------------------------------------
+float CalculateAngle(float nLat1, float nLon1, float nLat2, float nLon2)
+{
+    float longitudinalDifference = nLon2 - nLon1;
+    float latitudinalDifference  = nLat2 - nLat1;
+    float azimuth = (M_PI * .5f) - atan(latitudinalDifference / longitudinalDifference);
+    if (longitudinalDifference > 0)   return( azimuth );
+    else if (longitudinalDifference < 0) return( azimuth + M_PI );
+    else if (latitudinalDifference < 0)  return( M_PI );
+    return( 0.0f );
+}
+
+//------------------------------------------------------------------------------
+// GPSイベント：方位の取得
+//------------------------------------------------------------------------------
+-(void)locationManager:(CLLocationManager*)manager didUpdateHeading:(CLHeading*)newHeading
+{
+    // 方位角を求める
+    double azimuth = CalculateAngle(myLatitude,myLongitude,targetLatitude,targetLongitude);
+    
+    NSLog(@"azimuth %f",azimuth);
+    
+    // 現在向いている方位から方位角を引き、今向いている方向から対象物までの角度を算出する
+    double targetAzimuth = newHeading.trueHeading - azimuth;
+    
+    NSLog(@"targetAzimuth %f",targetAzimuth);
+    /*
+     targetAzimuthがマイナス値なら左方向、プラス値なら右方向に対象物があります。
+     自分が向いている方向を0度として考える事が出来ます。
+     */
+    
+    
+}
+
 
 
 #pragma mark -- テーブルビューに必要なメソッド
@@ -301,11 +337,11 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
                          }
          ];
         
-        ttLatitude = 35.658625;
-        ttLongitude = 139.745415;
+        targetLatitude = 35.658625;
+        targetLongitude = 139.745415;
         
         // 経緯・緯度からCLLocationを作成
-        CLLocation *A = [[CLLocation alloc] initWithLatitude:ttLatitude longitude:ttLongitude];
+        CLLocation *A = [[CLLocation alloc] initWithLatitude:targetLatitude longitude:targetLongitude];
         CLLocation *B = [[CLLocation alloc] initWithLatitude:myLatitude longitude:myLongitude];
         
         //　距離を取得
@@ -314,6 +350,9 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
         NSLog(@"distance:%f", distance);
         intDis = roundf(distance);
         meterLabel.text = [NSString stringWithFormat:@"%dm",intDis];
+        //viewDidLoadにあるから多分いらない
+//        [locationManager startUpdatingLocation]; // 現在位置を取得する
+        [locationManager startUpdatingHeading]; // コンパスの向きを取得
 
 
     }
@@ -328,6 +367,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
                              // アニメーションをする処理
                              filterView.alpha = 0.0;
                          }];
+        [locationManager stopUpdatingHeading];
     }
 }
 
