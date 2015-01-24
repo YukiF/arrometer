@@ -38,6 +38,9 @@
     //ユーザー追加するためのテキストフィールド
     UITextField *addUser;
     
+    //コンパス用
+    UIImageView *arrowPic;
+    
 
     //GPS用
     CLLocationManager *locationManager;

@@ -116,9 +116,10 @@
     
     //arrowの表示
     UIImage *arrow = [UIImage imageNamed:@"arrow.png"];
-    UIImageView *arrowPic = [[UIImageView alloc]initWithImage:arrow];
+    arrowPic = [[UIImageView alloc]initWithImage:arrow];
     arrowPic.frame = CGRectMake(0,0,rect.size.width/6,rect.size.width/2);
     arrowPic.center = CGPointMake(rect.size.width/2, rect.size.height/5*3);
+    arrowPic.transform = CGAffineTransformMakeRotation(180 * M_PI/180);
     [filterView addSubview:arrowPic];
     
     //距離を示すラベル
@@ -216,6 +217,8 @@ float CalculateAngle(float nLat1, float nLon1, float nLat2, float nLon2)
      targetAzimuthがマイナス値なら左方向、プラス値なら右方向に対象物があります。
      自分が向いている方向を0度として考える事が出来ます。
      */
+    //ここが怪しい
+    arrowPic.transform = CGAffineTransformMakeRotation((targetAzimuth + 180) * M_PI/180);
     
     
 }
